@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <title>TATA IPL 2025 - Crick Eera</title>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: #121212;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            overflow-y: scroll;
+            background-attachment: fixed;
+        }
+        h1 {
+            font-size: 32px;
+            text-transform: uppercase;
+            color: #00eaff;
+            text-shadow: 0 0 10px #00eaff, 0 0 20px #0077ff;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        .match-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 238, 255, 0.3);
+            width: 280px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .match-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 238, 255, 0.7);
+        }
+        .match-card.live {
+            border: 2px solid #ff073a;
+            background: #111111;
+            box-shadow: 0 0 20px #ff073a;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 7, 58, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(255, 7, 58, 1); }
+        }
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #aaa;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            backdrop-filter: blur(5px); /* Smooth glass effect */
+        }
+
+        .footer a {
+            color: #03DAC6; /* Stylish blue-green color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #00FF7F; /* Light green hover effect */
+        }
+
+
+        .status {
+            background: #0077ff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status.live {
+            background: #ff073a;
+        }
+        .teams {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .team {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .team img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+            transition: transform 0.3s;
+        }
+        .team img:hover {
+            transform: scale(1.1);
+        }
+        .match-info {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #ddd;
+        }
+        .venue {
+            display: block;
+            font-weight: bold;
+            color: #00eaff;
+            margin-bottom: 5px;
+        }
+        .watch-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .watch-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background: linear-gradient(135deg, #00eaff, #0077ff);
+            color: #121212;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .watch-btn:hover {
+            background: linear-gradient(135deg, #0077ff, #00eaff);
+        }
+        .event-not-started {
+            font-size: 14px;
+            color: #ff9800;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+  </style>
+  <style>
+  body { font-family: Arial, sans-serif; background: #121212; color: white; text-align: center; margin: 0; }
+  .blur-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; backdrop-filter: blur(4px); background: rgba(0, 0, 0, 0.5); display: none; z-index: 5; } /* Blurs only the background */
+  .alert-box { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.3); text-align: center; color: black; width: 300px; z-index: 10; } /* Alert remains clear */
+  .alert-box p { font-size: 18px; margin-bottom: 15px; }
+  .alert-box button { margin: 5px; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+  .join-btn { background: #3498db; color: white; }
+  .close-btn { background: #2ecc71; color: white; }
+  </style>
+</head>
+<body>
+  <header style=
+  "display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
+    <img src=
+    "https://i.ibb.co/pjyJXTcW/1000084081-removebg-preview.png"
+    alt="IPL 2025 Logo" style="height: 200px;">
+    <h1 style="color: #FFC2F4; font-size: 32px; margin: 0;">TATA
+    IPL 2025</h1>
+  </header>
+  <div class="container" id="matches"></div>
+  <script>
+       function _0x5fb4(){const _0x249a16=['</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22match-info\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22venue\x22>Venue:\x20','trim','createElement','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>VS</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22team\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','\x22\x20alt=\x22','2YAylrm','team2','</a>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22match-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>','Upcoming','263178oUeRvf','find','date','match_no','live','getElementById','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>','80BXkCBv','513056EZoJQU','name','50448dnxoTv','div','map','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22teams\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22team\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','team1','Error\x20loading\x20matches:','300312KTQvfq','\x22\x20class=\x22watch-btn\x22>','classList','add','img','<div\x20class=\x22event-not-started\x22>â³\x20Event\x20Not\x20Started</div>','toLowerCase','1085463YBBRPI','url','getTime','622959rqcrXP','status\x20live','links','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>','10HtHtRP','799015lDJoXn','matches','appendChild','status','innerHTML','venue'];_0x5fb4=function(){return _0x249a16;};return _0x5fb4();}(function(_0x9853ea,_0x4adea4){const _0x239776=_0x44ed,_0x351b78=_0x9853ea();while(!![]){try{const _0x5bad5f=parseInt(_0x239776(0xec))/0x1+-parseInt(_0x239776(0xe7))/0x2*(-parseInt(_0x239776(0xd7))/0x3)+parseInt(_0x239776(0xf8))/0x4*(-parseInt(_0x239776(0xf5))/0x5)+-parseInt(_0x239776(0xfe))/0x6+parseInt(_0x239776(0xdc))/0x7+-parseInt(_0x239776(0xf6))/0x8+-parseInt(_0x239776(0xd4))/0x9*(parseInt(_0x239776(0xdb))/0xa);if(_0x5bad5f===_0x4adea4)break;else _0x351b78['push'](_0x351b78['shift']());}catch(_0x51f4c8){_0x351b78['push'](_0x351b78['shift']());}}}(_0x5fb4,0x243a9));function _0x44ed(_0x2ee571,_0x22733f){const _0x5fb427=_0x5fb4();return _0x44ed=function(_0x44ed41,_0x30e5bc){_0x44ed41=_0x44ed41-0xd4;let _0x19a4ed=_0x5fb427[_0x44ed41];return _0x19a4ed;},_0x44ed(_0x2ee571,_0x22733f);}async function fetchMatches(){const _0x5016c6=_0x44ed;try{const _0x358e9e=await fetch('ipl.json?nocache='+new Date()[_0x5016c6(0xd6)]()),_0x3dd625=await _0x358e9e['json'](),_0x240c93=document[_0x5016c6(0xf1)]('matches');_0x240c93[_0x5016c6(0xe0)]='';function _0x233611(_0x3c8eb1){const _0x2c50fe=_0x5016c6,_0x5ace1d=_0x3dd625['flags'][_0x2c50fe(0xed)](_0x5df251=>_0x5df251[_0x2c50fe(0xf7)]===_0x3c8eb1);return _0x5ace1d?_0x5ace1d[_0x2c50fe(0x102)]:'';}_0x3dd625[_0x5016c6(0xdd)]['forEach'](_0x6592c8=>{const _0x2af484=_0x5016c6,_0x167db7=_0x6592c8[_0x2af484(0xdf)][_0x2af484(0xe3)]()[_0x2af484(0x104)]()===_0x2af484(0xf0),_0x190cc0=_0x167db7?'LIVE':_0x2af484(0xeb),_0x49a0a0=_0x167db7?_0x2af484(0xd8):_0x2af484(0xdf),_0x5e7419=document[_0x2af484(0xe4)](_0x2af484(0xf9));_0x5e7419[_0x2af484(0x100)][_0x2af484(0x101)]('match-card'),_0x167db7&&_0x5e7419[_0x2af484(0x100)]['add']('live'),_0x5e7419[_0x2af484(0xe0)]=_0x2af484(0xea)+_0x6592c8[_0x2af484(0xef)]+_0x2af484(0xf2)+_0x49a0a0+'\x22>'+_0x190cc0+_0x2af484(0xfb)+_0x233611(_0x6592c8[_0x2af484(0xfc)])+_0x2af484(0xe6)+_0x6592c8[_0x2af484(0xfc)]+_0x2af484(0xf4)+_0x6592c8[_0x2af484(0xfc)]+_0x2af484(0xe5)+_0x233611(_0x6592c8[_0x2af484(0xe8)])+'\x22\x20alt=\x22'+_0x6592c8['team2']+_0x2af484(0xf4)+_0x6592c8['team2']+_0x2af484(0xe2)+_0x6592c8[_0x2af484(0xe1)]+_0x2af484(0xda)+_0x6592c8[_0x2af484(0xee)]+',\x20'+_0x6592c8['start_time']+'</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22watch-buttons\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x167db7?_0x6592c8[_0x2af484(0xd9)][_0x2af484(0xfa)](_0x8e2923=>'<a\x20href=\x22'+_0x8e2923[_0x2af484(0xd5)]+_0x2af484(0xff)+_0x8e2923[_0x2af484(0xf7)]+_0x2af484(0xe9))['join'](''):_0x2af484(0x103))+_0x2af484(0xf3),_0x240c93[_0x2af484(0xde)](_0x5e7419);});}catch(_0x383c87){console['error'](_0x5016c6(0xfd),_0x383c87);}}fetchMatches(),setInterval(fetchMatches,0xea60);
+  </script>
+  <footer class="footer">
+    <p>Join For More Link <a href="https://t.me/+Jt-5CtcdaQY5MmU9"
+    target="_blank">Movies_Eera (Crick Eera)</a> | Keep Support</p>
+  </footer><!-- Footer with Credits -->
+  <footer style=
+  "margin-top: 40px; padding: 10px; text-align: center; font-size: 14px; color: #bbb;">
+    Powered by <b>@Movies_Eera</b> | Designed with ❤️ for IPL Fans
+  </footer>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1.0">
+    <title>Blurred Background Alert</title>
+  </head>
+  <div id="blur-bg" class="blur-bg"></div>
+  <!-- Background blur layer -->
+  <div id="alert-box" class="alert-box">
+    <p>Join Our Channel for More Match Link Or Make SupporT !</p>
+    <blockquote>
+      <b>𝙿𝚘𝚠𝚎𝚛e𝚍 𝙱𝚢 ➥ <a href=
+      'http://t.me/Movies_Eera'>@𝐌𝐨𝐯𝐢𝐞𝐬_𝐄𝐞𝐫𝐚</a></b>
+    </blockquote><button class="join-btn" onclick=
+    "window.open('https://t.me/+Jt-5CtcdaQY5MmU9', '_blank')">Join
+    Channel</button> <button class="close-btn" onclick=
+    "closeAlert()">Already Joined</button>
+  </div>
+  <script>
+  function showAlert() {
+  document.getElementById('blur-bg').style.display = 'block'; // Show background blur
+  document.getElementById('alert-box').style.display = 'block'; // Show alert box
+  }
+  function closeAlert() {
+  document.getElementById('blur-bg').style.display = 'none'; // Hide background blur
+  document.getElementById('alert-box').style.display = 'none'; // Hide alert box
+  }
+  setTimeout(showAlert, 0); // Show alert after 2 seconds
+  </script>
+</body>
+</html>
